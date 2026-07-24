@@ -178,11 +178,64 @@ def print_delta(diffs):
     print("=" * 70)
 
 
+def parse_git_patch(patch_text):
+    """Parse a git format patch into per-file diffs.
+
+    Returns a list of (filepath, added, removed, diff_lines) tuples.
+    """
+    lines = patch_text.split("\n")
+    diffs = []
+    current_file = None
+    current_diff = []
+    in_diff = False
+
+    for line in lines:
+        # Detect start of a new file diff
+        if line.startswith("diff --git "):
+            # Save previous file's diff if any
+            if current_file and current_diff:
+                added = sum(1 for l in current_diff if l.startswith("+") and not l.startswith("+++"))
+                removed = sum(1 for l in current_diff if l.startswith("-") and not l.startswith("---"))
+                if added > 0 or removed > 0:
+                    diffs.append((current_file, added, removed, current_diff))
+            # Extract filepath from "diff --git a/path b/path"
+            parts = line.split()
+            if len(parts) >= 4:
+                current_file = parts[3][2:]  # Strip "b/" prefix
+            current_diff = []
+            in_diff = True
+        elif in_diff:
+            current_diff.append(line)
+
+    # Save last file's diff
+    if current_file and current_diff:
+        added = sum(1 for l in current_diff if l.startswith("+") and not l.startswith("+++"))
+        removed = sum(1 for l in current_diff if l.startswith("-") and not l.startswith("---"))
+        if added > 0 or removed > 0:
+            diffs.append((current_file, added, removed, current_diff))
+
+    return diffs
+
+
 def fetch_full_diff(change_key, shas, context=3):
-    """Fetch full diff from first to latest patch set using file contents."""
+    """Fetch full diff from first to latest patch set.
+
+    For single patch set: uses Gerrit's /patch endpoint (vs parent commit).
+    For multiple patch sets: diffs file contents between first and latest.
+    """
     ps_numbers = sorted(shas.keys())
-    if len(ps_numbers) < 2:
-        return []
+
+    if len(ps_numbers) == 1:
+        # Single patch set: use Gerrit's /patch endpoint for efficient diff
+        rev_sha = shas[ps_numbers[0]]
+        url = f"{BASE}/changes/{change_key}/revisions/{rev_sha}/patch"
+        result = subprocess.run(["curl", "-s", url], capture_output=True, text=True)
+        raw = result.stdout
+        if raw.startswith(")]}'"):
+            raw = raw[4:]
+        raw = raw.lstrip("\n")
+        patch_text = base64.b64decode(raw).decode("utf-8", errors="replace")
+        return parse_git_patch(patch_text)
 
     rev1_sha = shas[ps_numbers[0]]
     rev2_sha = shas[ps_numbers[-1]]
@@ -338,9 +391,10 @@ def main():
     if args.ps2 is None:
         args.ps2 = ps_numbers[-1]
 
-    if args.full is not None:
+    if args.full is not None or len(ps_numbers) == 1:
         # Full diff: first patch set vs latest (all changes in the change)
-        diffs = fetch_full_diff(change_key, shas, context=args.full)
+        # Also used when there's only one patch set
+        diffs = fetch_full_diff(change_key, shas, context=args.full if args.full is not None else 3)
         display_title = f"Full diff (patch set {ps_numbers[-1]} vs {ps_numbers[0]})"
     else:
         diffs, ps2_sha, change_id = fetch_diff(args.change_id, args.ps1, args.ps2, change_key, context=3)
