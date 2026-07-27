@@ -23,10 +23,16 @@ Defaults:
 import argparse
 import base64
 import difflib
+import io
 import json
 import subprocess
 import sys
 import urllib.parse
+
+# Ensure UTF-8 output on Windows (cp1252 cannot encode chars like U+2192 →).
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 BASE = "https://codereview.qt-project.org"
 
