@@ -103,8 +103,9 @@ current catalog and tell the user which ones remain.
         (`phrasebooks/german.qph`, `french.qph`, `japanese.qph`,
         `polish.qph`, `russian.qph`, `swedish.qph`, `danish.qph`,
         `dutch.qph`, `finnish.qph`, `hungarian.qph`, `italian.qph`,
-        `norwegian.qph`, `spanish.qph`; no phrasebook exists for cs, hr,
-        sl, uk, zh_CN, zh_TW). An exact `<source>` match in the phrasebook
+        `norwegian.qph`, `romanian.qph`, `spanish.qph`; no phrasebook
+        exists for cs, hr, sl, uk, zh_CN, zh_TW). An exact `<source>`
+        match in the phrasebook
         is the official Qt rendering — use it. Phrasebooks are small XML
         files of `<source>/<target>` pairs; grep them, do not read whole.
      3. For everything else, keep the register and word choices consistent
@@ -145,9 +146,12 @@ current catalog and tell the user which ones remain.
 
 - The bundled `phrasebooks/` are vendored from the Qt Linguist toolchain
   (`qttools/src/linguist/phrasebooks`); they are the same glossaries the
-  Linguist GUI's batch-translation feature matches against. Treat them as
-  a terminology reference, not as exhaustive — the catalog's own
-  translations win on any conflict.
+  Linguist GUI's batch-translation feature matches against. Exception:
+  `romanian.qph` is not part of the Qt toolchain — it was compiled from
+  the community Romanian-English glossary (`glosar.txt`) next to
+  `phrasebooks/`, following the same `<source>/<target>` format. Treat
+  all phrasebooks as a terminology reference, not as exhaustive — the
+  catalog's own translations win on any conflict.
 - `lupdate` rewrites the whole file (reordering locations, refreshing
   line numbers) — that is expected; the translation edits in step 4 happen
   *after* lupdate, so the two do not conflict. Do not run lupdate again
