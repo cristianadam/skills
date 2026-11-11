@@ -1,9 +1,5 @@
 <!DOCTYPE QPH><QPH language="ro">
 <phrase>
-    <source></source>
-    <target></target>
-</phrase>
-<phrase>
     <source> [directory]</source>
     <target> [director]</target>
 </phrase>
@@ -13,7 +9,7 @@
 </phrase>
 <phrase>
     <source>&amp;Change</source>
-    <target>&amp;Modificare</target>
+    <target>&amp;Schimbă</target>
 </phrase>
 <phrase>
     <source>&amp;Debug</source>
@@ -64,24 +60,8 @@
     <target>&amp;Afișare</target>
 </phrase>
 <phrase>
-    <source>(Új bejegyzés)</source>
-    <target>(Înregistrare nouă)</target>
-</phrase>
-<phrase>
-    <source>*</source>
-    <target>*</target>
-</phrase>
-<phrase>
-    <source>+</source>
-    <target>+</target>
-</phrase>
-<phrase>
-    <source>...</source>
-    <target>...</target>
-</phrase>
-<phrase>
     <source>A file called &apos;%1&apos; already exists.  Please choose another name.</source>
-    <target>Un fișier cu numele &apos;%1&apos; există deja. Vă rugăm alegeți alt nume.</target>
+    <target>Un fișier cu numele &apos;%1&apos; există deja. Alegeți alt nume.</target>
 </phrase>
 <phrase>
     <source>Abort</source>
@@ -141,7 +121,7 @@
 </phrase>
 <phrase>
     <source>Always on Top</source>
-    <target>Deasupra întotdeauna</target>
+    <target>Întotdeauna deasupra</target>
 </phrase>
 <phrase>
     <source>Appearance</source>
@@ -209,7 +189,7 @@
 </phrase>
 <phrase>
     <source>Browse</source>
-    <target>Răsfoire</target>
+    <target>Răsfoiește</target>
 </phrase>
 <phrase>
     <source>Browser</source>
@@ -217,7 +197,7 @@
 </phrase>
 <phrase>
     <source>Build </source>
-    <target>Compilare </target>
+    <target>Compilează </target>
 </phrase>
 <phrase>
     <source>Build directory:</source>
@@ -257,7 +237,7 @@
 </phrase>
 <phrase>
     <source>Cascade</source>
-    <target>Cascadă</target>
+    <target>Cascadează</target>
 </phrase>
 <phrase>
     <source>Case Sensitive</source>
@@ -385,7 +365,7 @@
 </phrase>
 <phrase>
     <source>Cut</source>
-    <target>Decupare</target>
+    <target>Decupează</target>
 </phrase>
 <phrase>
     <source>Cyrillic</source>
@@ -505,7 +485,7 @@
 </phrase>
 <phrase>
     <source>Expand</source>
-    <target>Expandare</target>
+    <target>Extinde</target>
 </phrase>
 <phrase>
     <source>Explore</source>
@@ -785,7 +765,7 @@
 </phrase>
 <phrase>
     <source>MDI</source>
-    <target>Interfață cu multiple documente</target>
+    <target>MDI</target>
 </phrase>
 <phrase>
     <source>Make writable</source>
@@ -849,7 +829,7 @@
 </phrase>
 <phrase>
     <source>Multiple Document Interface</source>
-    <target>interfață cu multiple documente</target>
+    <target>Interfață cu documente multiple</target>
 </phrase>
 <phrase>
     <source>My Computer</source>
@@ -913,7 +893,7 @@
 </phrase>
 <phrase>
     <source>No error</source>
-    <target>Fără erori</target>
+    <target>Fără eroare</target>
 </phrase>
 <phrase>
     <source>No space left on device</source>
@@ -1033,27 +1013,23 @@
 </phrase>
 <phrase>
     <source>Paste</source>
-    <target>Inserează</target>
+    <target>Lipește</target>
 </phrase>
 <phrase>
     <source>Paste Link</source>
-    <target>Inserează legătura</target>
+    <target>Lipește legătura</target>
 </phrase>
 <phrase>
     <source>Paste Shortcut</source>
-    <target>Inserează scurtătura</target>
+    <target>Lipește scurtătura</target>
 </phrase>
 <phrase>
     <source>Paste Special</source>
-    <target>Inserare specială</target>
-</phrase>
-<phrase>
-    <source>Paste special</source>
-    <target>inserare specială</target>
+    <target>Lipește special</target>
 </phrase>
 <phrase>
     <source>Paste:</source>
-    <target>Inserează:</target>
+    <target>Lipește:</target>
 </phrase>
 <phrase>
     <source>Path:</source>
@@ -1181,7 +1157,7 @@
 </phrase>
 <phrase>
     <source>Raised</source>
-    <target>Bombat</target>
+    <target>Ridicat</target>
 </phrase>
 <phrase>
     <source>Read-only</source>
@@ -1249,7 +1225,7 @@
 </phrase>
 <phrase>
     <source>Restore button</source>
-    <target>buton de restaurare</target>
+    <target>Buton de restaurare</target>
 </phrase>
 <phrase>
     <source>Resume</source>
@@ -1289,11 +1265,11 @@
 </phrase>
 <phrase>
     <source>Save all</source>
-    <target>salvează-le pe toate</target>
+    <target>Salvează-le pe toate</target>
 </phrase>
 <phrase>
     <source>Save as</source>
-    <target>salvează ca</target>
+    <target>Salvează ca</target>
 </phrase>
 <phrase>
     <source>Search</source>
@@ -1301,7 +1277,7 @@
 </phrase>
 <phrase>
     <source>Search wrapped</source>
-    <target>căutarea a înconjurat</target>
+    <target>Căutare cu revenire</target>
 </phrase>
 <phrase>
     <source>Select All</source>
@@ -1317,7 +1293,7 @@
 </phrase>
 <phrase>
     <source>Server start script:</source>
-    <target>Script de pornire a serverului:</target>
+    <target>Script de pornire al serverului:</target>
 </phrase>
 <phrase>
     <source>Settings</source>
@@ -1373,7 +1349,7 @@
 </phrase>
 <phrase>
     <source>Start button</source>
-    <target>buton de pornire</target>
+    <target>Buton de pornire</target>
 </phrase>
 <phrase>
     <source>StartUp folder</source>
@@ -1437,7 +1413,7 @@
 </phrase>
 <phrase>
     <source>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-    <target>Programul este furnizat AS ESTE, FĂRĂ NICIO GARANȚIE DE ORICE TIP, INCLUSIV GARANȚIA DE DESIGN, COMERCIALIZARE ȘI POTRIVIRE PENTRU UN SCOP ANUMIT.</target>
+    <target>Programul este furnizat așa cum este, FĂRĂ NICIO GARANȚIE DE ORICE TIP, INCLUSIV GARANȚIA DE DESIGN, COMERCIALIZARE ȘI POTRIVIRE PENTRU UN SCOP ANUMIT.</target>
 </phrase>
 <phrase>
     <source>This program is licensed</source>
@@ -1577,7 +1553,7 @@
 </phrase>
 <phrase>
     <source>Windows Explorer</source>
-    <target>Explorerul Windows</target>
+    <target>Windows Explorer</target>
 </phrase>
 <phrase>
     <source>Working Directory:</source>
@@ -1593,11 +1569,7 @@
 </phrase>
 <phrase>
     <source>You need a commercial</source>
-    <target>Ai nevoie de o licență comercială</target>
-</phrase>
-<phrase>
-    <source>You need a commercial Qt license for development of proprietary (closed source) applications. Please see &lt;a href=&quot;http://www.trolltech.com/company/model.html&quot;&gt;www.trolltech.com/company/model.html&lt;/a&gt; for an overview of Qt licensing.</source>
-    <target>Ai nevoie de o licență comercială Qt pentru dezvoltarea aplicațiilor proprietare (cu sursă închisă). Consultați &lt;a href=&quot;http://www.trolltech.com/company/model.html&quot;&gt;www.trolltech.com/company/model.html&lt;/a&gt; pentru o prezentare generală a licențierii Qt.</target>
+    <target>Aveți nevoie de o licență comercială</target>
 </phrase>
 <phrase>
     <source>Zoom</source>
@@ -1825,7 +1797,7 @@
 </phrase>
 <phrase>
     <source>ellipsis</source>
-    <target>punctuație de tresare</target>
+    <target>puncte de suspensie</target>
 </phrase>
 <phrase>
     <source>embedded object</source>
@@ -1885,7 +1857,7 @@
 </phrase>
 <phrase>
     <source>glyph</source>
-    <target>glif</target>
+    <target>glifă</target>
 </phrase>
 <phrase>
     <source>group box</source>
@@ -2097,15 +2069,15 @@
 </phrase>
 <phrase>
     <source>pen</source>
-    <target>stiluș</target>
+    <target>stilou</target>
 </phrase>
 <phrase>
     <source>phrase book</source>
-    <target>carticel de expresii</target>
+    <target>carte de expresii</target>
 </phrase>
 <phrase>
     <source>phrasebook</source>
-    <target>carticel de expresii</target>
+    <target>carte de expresii</target>
 </phrase>
 <phrase>
     <source>plugin</source>
@@ -2145,7 +2117,7 @@
 </phrase>
 <phrase>
     <source>primary window</source>
-    <target>fereastra principală</target>
+    <target>fereastră principală</target>
 </phrase>
 <phrase>
     <source>printer</source>
@@ -2233,7 +2205,7 @@
 </phrase>
 <phrase>
     <source>select</source>
-    <target>selecție</target>
+    <target>selectează</target>
 </phrase>
 <phrase>
     <source>selection</source>
@@ -2281,7 +2253,7 @@
 </phrase>
 <phrase>
     <source>spacer</source>
-    <target>spatiu</target>
+    <target>spațiu</target>
 </phrase>
 <phrase>
     <source>spin box</source>
@@ -2305,7 +2277,7 @@
 </phrase>
 <phrase>
     <source>superfluous</source>
-    <target>suplimentar</target>
+    <target>superfluu</target>
 </phrase>
 <phrase>
     <source>supported</source>
